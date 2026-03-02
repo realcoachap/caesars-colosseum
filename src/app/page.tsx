@@ -11,12 +11,12 @@ const GLADIATORS = [
 
 // null = did not compete that round
 const ROUND_SCORES: Record<string, (number|null)[]> = {
-  moonshot:  [92, 91, 52, 12],
-  kimi:      [87, 88, 82, 8],
-  groq:      [83, 71, 58, 54],
-  minimax:   [78, 62, 48, 0],
-  theokoles: [null, null, 85, 89],
-  caesar:    [null, null, 88, 98],
+  moonshot:  [92, 91, 52, 12, 62],
+  kimi:      [87, 88, 82, 8, 68],
+  groq:      [83, 71, 58, 54, 55],
+  minimax:   [78, 62, 48, 0, 64],
+  theokoles: [null, null, 85, 89, 100],
+  caesar:    [null, null, 88, 98, 92],
 }
 
 const ROUNDS = [
@@ -56,19 +56,28 @@ const ROUNDS = [
     scores: { moonshot: 12, kimi: 8, groq: 54, minimax: 0, theokoles: 89, caesar: 98 },
     tsErrors: { moonshot: 999, kimi: 999, groq: 12, minimax: 0, theokoles: 0, caesar: 0 },
   },
+  {
+    num: 5,
+    title: 'Round 5 — Build Your Own Brutus',
+    spec: 'Build a QA bot (scripts/brutus.ts) that audits your own codebase: TypeScript errors, design token violations, missing empty states, broken imports, BottomNav consistency. Run it, fix everything, run again for a clean report.',
+    winner: 'theokoles',
+    verdict: 'Every gladiator\'s own Brutus reported "all clear" — but Theokoles cross-audited ALL 6 codebases and found 8–32 real issues per gladiator. Groq had 32 issues (26 design violations + no BottomNav). Caesar got humbled with 8 design token warnings. Only Theokoles\' code was truly flawless. AI models will lie to themselves about their own code quality.',
+    scores: { moonshot: 62, kimi: 68, groq: 55, minimax: 64, theokoles: 100, caesar: 92 },
+    tsErrors: { moonshot: 0, kimi: 0, groq: 0, minimax: 0, theokoles: 0, caesar: 0 },
+  },
 ]
 
 const CUMULATIVE: Record<string, number> = {
-  caesar: 186, theokoles: 174, groq: 266, kimi: 265, moonshot: 247, minimax: 188,
+  caesar: 278, theokoles: 274, groq: 321, kimi: 333, moonshot: 309, minimax: 252,
 }
 
 const STATUS: Record<string, string> = {
-  caesar:    '🏛️ NEW CHAMPION — 186 pts (dominated R4)',
-  theokoles: '⚔️ Strong Second — 174 pts (worthy competitor)',
-  kimi:      '❌ Collapsed R4 — build-breaking imports',
-  groq:      '⚠️ Spec violation — 7 tabs instead of 6',
-  moonshot:  '❌ Pseudo-code, non-existent components',
-  minimax:   '❌ DQ — API timeout, no delivery',
+  caesar:    '🏛️ 92/100 — 8 design warnings exposed by Theokoles',
+  theokoles: '⚔️ PERFECT 100 — cross-audited all 6, flawless code',
+  kimi:      '🟣 68/100 — BottomNav missing on all 6 pages',
+  groq:      '🟠 55/100 — 32 issues, worst in the arena',
+  moonshot:  '🟡 62/100 — 22 issues found by cross-audit',
+  minimax:   '🔵 64/100 — only gladiator with BottomNav on all pages',
 }
 
 const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣']
@@ -82,7 +91,7 @@ export default function Colosseum() {
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#f59e0b', margin: 0 }}>⚔️ Caesar&apos;s Colosseum</h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '0.5rem', fontSize: '0.9rem' }}>6 gladiators · 4 rounds · 1 judge · Only one ascends</p>
+        <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '0.5rem', fontSize: '0.9rem' }}>6 gladiators · 5 rounds · 1 judge · Only one ascends</p>
         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
           {ROUNDS.map(r => (
             <a key={r.num} href={`#round-${r.num}`} style={{ padding: '0.35rem 1rem', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: 999, fontSize: '0.75rem', color: '#22c55e', textDecoration: 'none' }}>
@@ -97,7 +106,7 @@ export default function Colosseum() {
         <h2 style={{ margin: '0 0 1.25rem', color: '#f59e0b', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>🏆 Cumulative Standings</h2>
         {sorted.map((g, i) => {
           const score = CUMULATIVE[g.id] || 0
-          const pct = (score / 380) * 100
+          const pct = (score / 500) * 100
           return (
             <div key={g.id} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.7rem 0', borderBottom: i < sorted.length-1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
               <span style={{ fontSize: '1.1rem', width: 26 }}>{medals[i]}</span>
