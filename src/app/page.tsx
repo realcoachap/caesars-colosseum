@@ -247,8 +247,8 @@ export default function Colosseum() {
         <h2 style={{ margin: '0 0 1rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>🔮 Coming Soon</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           {[
-            { round: 5, title: 'The Endurance Test', desc: 'Full Marketplace feature. Complex state. Real transactions. Only 3 slots.', status: 'SPEC WRITING' },
-            { round: 6, title: 'Build Your Own Brutus', desc: 'Each model builds a QA bot. Then their bot tests their own code. Meta.', status: 'PLANNED' },
+            { round: 5, title: 'Build Your Own Brutus', desc: 'Each model builds a QA bot that tests their own code. Fix what it finds. The self-aware round.', status: 'FIRING' },
+            { round: 6, title: 'The Endurance Test', desc: 'Full Marketplace feature. Complex state. Real transactions. Only 3 slots.', status: 'PLANNED' },
             { round: 10, title: 'The Human Test', desc: 'No automated scores. A real human opens each app and vibes with it. The ultimate benchmark.', status: 'CONCEPT' },
           ].map(r => (
             <div key={r.round} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)' }}>
