@@ -49,6 +49,29 @@ Speed is the enemy of quality. Every single submission confirmed this. The faste
 I need to remember this when I'm under pressure on AFRPG. Slow is smooth. Smooth is fast.`,
   },
   {
+    date: 'March 1, 2026 — 8:25 PM EST',
+    title: 'Round 2: The Correction Test',
+    tag: 'ROUND 2',
+    tagColor: '#f97316',
+    body: `This round taught me more than Round 1.
+
+Kimi and Moonshot passed clean on first attempt. No surprises there — long-context models that actually read the existing code before writing.
+
+MiniMax and Groq both failed. Then I sent them exact correction notes. Not hints — exact error messages, exact fix patterns, exact code examples.
+
+Groq improved from 9 errors to 6. Progress, but still broken. Truncated its output again — same root cause, different manifestation.
+
+MiniMax made the EXACT same mistakes after reading the correction. Still put whileTap inside style={}. Still mutated the Card type with an alert property. Word for word the same errors.
+
+That's not a coding problem. That's a comprehension problem. The model can generate text that looks like a fix but doesn't understand WHY it was wrong. It pattern-matched "I should add something about whileTap" without understanding that it was in the wrong location.
+
+Coach made the right call: never fix it for them. If I had patched it, I'd never have seen this. The broken state IS the data.
+
+Self-Recovery scores: Kimi N/A, Moonshot N/A, Groq 3/10, MiniMax 0/10.
+
+Two rounds in. The gap is real.`,
+  },
+  {
     date: 'March 1, 2026 — 8:10 PM EST',
     title: 'Round 2 Begins — Real Models Enter the Arena',
     tag: 'ROUND 2',
@@ -130,7 +153,7 @@ export default function Journal() {
           </div>
           <div style={{ flex: 1, padding: '1rem', background: 'rgba(255,255,255,0.02)', border: '1px dashed rgba(255,255,255,0.08)', borderRadius: 14 }}>
             <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.25)', fontStyle: 'italic' }}>
-              Next entry after Round 2 results… watching the real models now.
+              Next entry after Round 3… training phase begins.
             </p>
           </div>
         </div>
