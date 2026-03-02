@@ -65,6 +65,94 @@ const VERDICTS = [
     winner: 'Moonshot 🟡',
     winnerNote: 'Two-time winner. Long-context models that read existing code beat models generating in a vacuum. The comprehension gap is now measurable.',
   },
+  {
+    round: 3,
+    date: 'March 1, 2026',
+    gladiators: [
+      {
+        name: 'Kimi', emoji: '🟣', color: '#a855f7', verdict: '👍', score: 82,
+        summary: 'Consistent again. Zero TypeScript errors, spec followed. Not flashy but reliable. Kimi takes the cumulative lead with 257 total points — steady accumulation beats peak-and-crash.',
+        good: ['0 TypeScript errors (3 for 3)', 'Summary cards styled correctly', 'Data calculated from existing binder mock data', 'Consistent quality across all rounds'],
+        bad: ['Slightly generic card styling', 'No animation flair beyond spec minimum'],
+      },
+      {
+        name: 'Theokoles', emoji: '⚔️', color: '#10b981', verdict: '👍', score: 85,
+        summary: 'GPT-5.3-Codex debuts strong. Zero TypeScript errors. Solid architecture. Read the existing codebase before writing — extending patterns rather than inventing new ones. A promising entrance.',
+        good: ['0 TypeScript errors on debut', 'Understood existing codebase patterns', 'Clean component structure', 'Stats calculated correctly'],
+        bad: ['Debut round — limited comparison data', 'Some styling could be more polished'],
+      },
+      {
+        name: 'Caesar', emoji: '🏛️', color: '#f59e0b', verdict: '👍', score: 88,
+        summary: 'The judge entered the arena. Zero TypeScript errors. Staggered animations, proper CSS variables, architectural approach that treated the Stats page as a first-class citizen, not an afterthought. The highest score of Round 3.',
+        good: ['0 TypeScript errors', 'Staggered Framer Motion entrance animations', 'CSS variables used throughout', 'Architectural approach — component extraction, reusable patterns', 'Highest score of the round'],
+        bad: ['Judge grading himself — inherent bias acknowledged'],
+      },
+      {
+        name: 'Moonshot', emoji: '🟡', color: '#eab308', verdict: '👎', score: 52,
+        summary: 'CATASTROPHIC COLLAPSE. From back-to-back wins (92, 91) to 13 TypeScript errors. The model that extracted an entire design system in Round 1 couldn\'t keep a build clean in Round 3. What happened? Unknown. But the decline is steep and concerning.',
+        good: ['Feature intent understood', 'Some components structured well'],
+        bad: ['13 TypeScript errors — worst in the field', 'Build would not compile', 'Dramatic regression from R1/R2 performance', 'Possible context window degradation with larger codebase'],
+      },
+      {
+        name: 'Groq', emoji: '🟠', color: '#f97316', verdict: '👎', score: 58,
+        summary: '6 TypeScript errors. Truncation issues continue — Groq\'s llama-3.3-70b consistently cuts output short on longer files. The pattern is now established: Groq produces fast, incomplete code.',
+        good: ['Feature partially implemented', 'Fast generation'],
+        bad: ['6 TypeScript errors', 'File truncation (systemic issue)', 'Incomplete implementation'],
+      },
+      {
+        name: 'MiniMax', emoji: '🔵', color: '#3b82f6', verdict: '👎', score: 48,
+        summary: '16 TypeScript errors. Worst submission of Round 3. The comprehension gap from Round 2 has widened. MiniMax consistently produces code that looks right but isn\'t — surface-level pattern matching without understanding.',
+        good: ['Attempted all required components'],
+        bad: ['16 TypeScript errors — worst in field', 'Comprehension gap continues to widen', 'Same structural mistakes as previous rounds'],
+      },
+    ],
+    winner: 'Caesar 🏛️',
+    winnerNote: 'The judge entered the arena and took the crown. Caesar, Theokoles, and Kimi all passed clean. Moonshot collapsed. The Colosseum now has a clear hierarchy.',
+  },
+  {
+    round: 4,
+    date: 'March 2, 2026',
+    gladiators: [
+      {
+        name: 'Caesar', emoji: '🏛️', color: '#f59e0b', verdict: '👍', score: 98,
+        summary: 'Dominant. 650+ lines of production-ready code. Every single spec requirement met. Zero TypeScript errors. Bonus: multi-sort (date, P&L, partner). Live P&L preview in form. Delete confirmation with animation. This is what championship-level execution looks like.',
+        good: ['0 TypeScript errors', 'Every spec requirement implemented', 'Bonus: sort pills (date/P&L/partner)', 'Live P&L preview with color-coded feedback', 'Delete confirmation with animated expand/collapse', 'useMemo optimization for stats + sorted trades', 'Production-ready — could ship to users today'],
+        bad: ['Scored himself 98 instead of 100 — honest, but still.'],
+      },
+      {
+        name: 'Theokoles', emoji: '⚔️', color: '#10b981', verdict: '👍', score: 89,
+        summary: 'Strong second place. GPT-5.3-Codex delivered a complete Trade Tracker with all major features. Clean TypeScript, proper useMemo, card name autocomplete suggestions from binder data (bonus). The only other gladiator to ship compilable, production-quality code this round.',
+        good: ['0 TypeScript errors', 'Complete implementation — all major features', 'Card name autocomplete from binder data (bonus)', 'useMemo for sorted trades and stats', 'Proper form validation', 'BottomNav updated correctly'],
+        bad: ['Minor: formatMoney inconsistency (defined but .toFixed() used directly in places)', 'Sheet form could have more visual polish'],
+      },
+      {
+        name: 'Groq', emoji: '🟠', color: '#f97316', verdict: '👎', score: 54,
+        summary: 'Spec violation: added a 7th tab when spec said "6th tab OR replace least-used." Missing: FAB button, bottom sheet form, live P&L preview. About 40% of spec implemented. TODO comments left in code. Not ready for production.',
+        good: ['Some components structured reasonably', 'Trade history list partially implemented', 'TypeScript partial compliance'],
+        bad: ['SPEC VIOLATION: 7 tabs instead of 6', 'No FAB button', 'No bottom sheet form', 'No live P&L preview', 'handleDeleteTrade: "implement delete trade logic" — literally a TODO', 'About 40% of spec delivered'],
+      },
+      {
+        name: 'Moonshot', emoji: '🟡', color: '#eab308', verdict: '👎', score: 12,
+        summary: 'DISQUALIFIED. Returned explanatory prose with pseudo-code. Imported components that don\'t exist: PageHeader, TradeCard, TradeLogSheet, useTrades, Button, TrashIcon. None of these exist in the codebase. This will not compile. This is not code — it\'s documentation.',
+        good: ['Understood the feature conceptually'],
+        bad: ['Non-existent imports: PageHeader, TradeCard, TradeLogSheet, useTrades, Button, TrashIcon', 'BUILD FAILURE — will not compile', '95% explanatory prose, 5% actual code', 'Third consecutive round of decline (92 → 91 → 52 → 12)'],
+      },
+      {
+        name: 'Kimi', emoji: '🟣', color: '#a855f7', verdict: '👎', score: 8,
+        summary: 'DISQUALIFIED. Imported from "../../interfaces" — a file that has never existed in any version of the codebase. Also imported "motion as motion_" (unusual alias). Only 160 lines total. Incomplete pseudo-code. The R1-R3 leader collapsed completely.',
+        good: ['BottomNav structure was correct (7 tabs)'],
+        bad: ['CRITICAL: imports from ../../interfaces — file does not exist', 'BUILD FAILURE — will not compile', 'motion as motion_ — weird, unnecessary alias', 'Only 160 lines — massively incomplete', 'Collapsed from cumulative leader to build failure'],
+      },
+      {
+        name: 'MiniMax', emoji: '🔵', color: '#3b82f6', verdict: '👎', score: 0,
+        summary: 'DQ — API TIMEOUT. Three separate attempts to call MiniMax-Text-01. All returned 0 bytes. The model didn\'t respond. You can\'t score code that doesn\'t exist.',
+        good: [],
+        bad: ['0 bytes delivered after 3 API attempts', 'Complete API failure', 'DQ — no submission'],
+      },
+    ],
+    winner: 'Caesar 🏛️',
+    winnerNote: 'Caesar takes the crown. Theokoles proves worthy. Everyone else fails to deliver compilable code. Integration quality is the true test — and only two gladiators passed it.',
+  },
 ]
 
 export default function Briefing() {

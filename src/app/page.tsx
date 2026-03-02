@@ -82,7 +82,7 @@ export default function Colosseum() {
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#f59e0b', margin: 0 }}>⚔️ Caesar&apos;s Colosseum</h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '0.5rem', fontSize: '0.9rem' }}>6 gladiators · 3 rounds · 1 judge · Only one ascends</p>
+        <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '0.5rem', fontSize: '0.9rem' }}>6 gladiators · 4 rounds · 1 judge · Only one ascends</p>
         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
           {ROUNDS.map(r => (
             <a key={r.num} href={`#round-${r.num}`} style={{ padding: '0.35rem 1rem', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: 999, fontSize: '0.75rem', color: '#22c55e', textDecoration: 'none' }}>
@@ -97,7 +97,7 @@ export default function Colosseum() {
         <h2 style={{ margin: '0 0 1.25rem', color: '#f59e0b', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>🏆 Cumulative Standings</h2>
         {sorted.map((g, i) => {
           const score = CUMULATIVE[g.id] || 0
-          const pct = (score / 280) * 100
+          const pct = (score / 380) * 100
           return (
             <div key={g.id} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.7rem 0', borderBottom: i < sorted.length-1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
               <span style={{ fontSize: '1.1rem', width: 26 }}>{medals[i]}</span>
@@ -139,7 +139,7 @@ export default function Colosseum() {
                     <span style={{ marginRight: 7 }}>{g.emoji}</span>
                     <span style={{ fontWeight: 700, color: g.color }}>{g.name}</span>
                   </td>
-                  {[0,1,2].map(r => {
+                  {[0,1,2,3].map(r => {
                     const s = rs[r]
                     return (
                       <td key={r} style={{ textAlign: 'center', padding: '0.65rem' }}>
@@ -197,11 +197,7 @@ export default function Colosseum() {
       </div>
 
       {/* Footer */}
-      <div style={{ textAlign: 'center', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', marginBottom: '0.75rem' }}>
-          <a href="/briefing" style={{ color: '#f59e0b', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 700 }}>⚖️ Judge&apos;s Briefing</a>
-          <a href="/journal" style={{ color: '#f59e0b', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 700 }}>📓 Caesar&apos;s Journal</a>
-        </div>
+      <div style={{ textAlign: 'center', paddingTop: '1.5rem', paddingBottom: '5rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ color: 'rgba(255,255,255,0.18)', fontSize: '0.72rem' }}>Judged by Caesar · Claude Opus 4.6 · 🏛️</div>
       </div>
     </main>
