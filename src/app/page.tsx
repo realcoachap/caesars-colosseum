@@ -11,12 +11,12 @@ const GLADIATORS = [
 
 // null = did not compete that round
 const ROUND_SCORES: Record<string, (number|null)[]> = {
-  moonshot:  [92, 91, 52],
-  kimi:      [87, 88, 82],
-  groq:      [83, 71, 58],
-  minimax:   [78, 62, 48],
-  theokoles: [null, null, 85],
-  caesar:    [null, null, 88],
+  moonshot:  [92, 91, 52, 12],
+  kimi:      [87, 88, 82, 8],
+  groq:      [83, 71, 58, 54],
+  minimax:   [78, 62, 48, 0],
+  theokoles: [null, null, 85, 89],
+  caesar:    [null, null, 88, 98],
 }
 
 const ROUNDS = [
@@ -47,19 +47,28 @@ const ROUNDS = [
     scores: { moonshot: 52, kimi: 82, groq: 58, minimax: 48, theokoles: 85, caesar: 88 },
     tsErrors: { moonshot: 13, kimi: 0, groq: 6, minimax: 16, theokoles: 0, caesar: 0 },
   },
+  {
+    num: 4,
+    title: 'Round 4 — The Integration Test',
+    spec: 'Build a Trade Tracker: new page with summary stats, trade history, FAB, form sheet, live P&L preview. Must integrate with existing codebase without breaking anything.',
+    winner: 'caesar',
+    verdict: 'Caesar dominates (98/100) — pixel-perfect execution. Theokoles strong (89/100) — worthy competitor. Groq violated spec (7 tabs, incomplete). Moonshot + Kimi delivered pseudo-code with build-breaking imports. MiniMax timed out. Integration quality separates champions from pretenders.',
+    scores: { moonshot: 12, kimi: 8, groq: 54, minimax: 0, theokoles: 89, caesar: 98 },
+    tsErrors: { moonshot: 999, kimi: 999, groq: 12, minimax: 0, theokoles: 0, caesar: 0 },
+  },
 ]
 
 const CUMULATIVE: Record<string, number> = {
-  kimi: 257, moonshot: 235, groq: 212, minimax: 188, caesar: 88, theokoles: 85,
+  caesar: 186, theokoles: 174, groq: 266, kimi: 265, moonshot: 247, minimax: 188,
 }
 
 const STATUS: Record<string, string> = {
-  kimi:      '🥇 Overall Leader — 257 pts',
-  moonshot:  '📉 Stumbled R3 — 13 TS errors',
-  groq:      '3rd Place — truncation issues',
-  minimax:   '4th Place — comprehension gap',
-  caesar:    '🏛️ Debut: 88pts — 0 TS errors',
-  theokoles: '⚔️ Debut: 85pts — 0 TS errors',
+  caesar:    '🏛️ NEW CHAMPION — 186 pts (dominated R4)',
+  theokoles: '⚔️ Strong Second — 174 pts (worthy competitor)',
+  kimi:      '❌ Collapsed R4 — build-breaking imports',
+  groq:      '⚠️ Spec violation — 7 tabs instead of 6',
+  moonshot:  '❌ Pseudo-code, non-existent components',
+  minimax:   '❌ DQ — API timeout, no delivery',
 }
 
 const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣']
