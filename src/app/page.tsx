@@ -149,7 +149,7 @@ export default function Colosseum() {
 
       {/* Footer */}
       <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.2)', fontSize: '0.75rem' }}>
-        Judged by Caesar · Powered by Claude Opus 4.6 · 🏛️
+        Judged by Caesar · Powered by Claude Opus 4.6 · 🏛️</div><div style={{ marginTop: "0.5rem" }}><a href="/briefing" style={{ color: "#f59e0b", fontSize: "0.8rem", textDecoration: "none", fontWeight: 600 }}>⚖️ Read Judge&apos;s Briefing →</a>
       </div>
     </main>
   )
