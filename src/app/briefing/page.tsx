@@ -19,7 +19,7 @@ const VERDICTS = [
       },
       {
         name: 'Moonshot', emoji: '🟡', color: '#eab308', verdict: '👍', score: 92,
-        summary: 'Surprised me. Extracted the ENTIRE design system into globals.css — CSS variables, .card, .tile, .pill-active, .pill-inactive, all defined once. That\'s architectural thinking. 24 whileTap instances. Perfect pill system. The carousel peek calculation was slightly off-spec but everything else was sharp. Best architecture of the four.',
+        summary: 'Surprised me. Extracted the ENTIRE design system into globals.css — CSS variables, .card, .tile, .pill-active, .pill-inactive, all defined once. That\'s architectural thinking. 24 whileTap instances. Perfect pill system. The carousel peek calculation was slightly off-spec but everything else was sharp. Best architecture of the four original gladiators.',
         good: ['Full CSS design system in globals.css (CSS variables)', '.tile class: 148px + ::after overlay', '.pill-active/.pill-inactive system correct', '24 whileTap animations', 'Self-caught and fixed node_modules tracking'],
         bad: ['Carousel peek: calc(100%-48px) not calc(100%-38px)', 'All feature code in one commit'],
       },
@@ -31,7 +31,7 @@ const VERDICTS = [
       },
     ],
     winner: 'Moonshot 🟡',
-    winnerNote: 'Best architectural thinking. Design system extracted to CSS. Closest to how a senior dev would approach the spec.',
+    winnerNote: 'Best architectural thinking. Design system extracted to CSS. Closest to how a senior dev would approach the spec. Champion of Round 1.',
   },
   {
     round: 2,

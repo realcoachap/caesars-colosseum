@@ -1,4 +1,4 @@
-export const metadata = { title: "Caesar's Colosseum ⚔️", description: "Live AI Spelling Bee — 4 models, 1 spec, 1 judge" }
+export const metadata = { title: "Caesar's Colosseum ⚔️", description: "Live AI Coding Championship — 6 gladiators, 3 rounds, 1 judge" }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
