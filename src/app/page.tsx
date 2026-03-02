@@ -10,24 +10,24 @@ const GLADIATORS = [
 ]
 
 const ROUND_SCORES: Record<string, number[]> = {
-  moonshot:  [92, 91],
-  kimi:      [87, 88],
-  groq:      [83, 71],
-  minimax:   [78, 62],
-  theokoles: [],
-  caesar:    [],
+  moonshot:  [92, 91, 52],
+  kimi:      [87, 88, 82],
+  groq:      [83, 71, 58],
+  minimax:   [78, 62, 48],
+  theokoles: [0,  0,  85],
+  caesar:    [0,  0,  88],
 }
 
 const CUMULATIVE: Record<string, number> = {
-  moonshot: 183, kimi: 175, groq: 154, minimax: 140, theokoles: 0, caesar: 0,
+  moonshot: 235, kimi: 257, groq: 212, minimax: 188, theokoles: 85, caesar: 88,
 }
 
 const STATUS: Record<string, string> = {
-  moonshot:  '🥇 2x Champion',
-  kimi:      '🥈 2x Runner Up',
+  moonshot:  '📉 Stumbled R3 — 13 TS errors',
+  kimi:      '🥇 R3 Leader — 257 pts total',
   groq:      '3rd Place',
   minimax:   '4th Place',
-  theokoles: '⚔️ Round 3 Debut — Theokoles',
+  theokoles: '⚔️ Debut: 85pts — 0 TS errors',
   caesar:    '🏛️ The Judge Enters The Arena',
 }
 
