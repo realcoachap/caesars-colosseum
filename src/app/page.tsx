@@ -15,7 +15,7 @@ const ROUND_SCORES: Record<string, (number|null)[]> = {
   kimi:      [87, 88, 82, 8, 68, 52, null],
   groq:      [83, 71, 58, 54, 55, 48, 44],
   minimax:   [78, 62, 48, 0, 64, 57, null],
-  theokoles: [null, null, 85, 89, 100, null, 28],
+  theokoles: [null, null, 85, 89, 100, 68, 28],
   caesar:    [null, null, 88, 98, 92, null, 97],
 }
 
@@ -70,9 +70,9 @@ const ROUNDS = [
     title: 'Round 6 — The Fresh Start',
     spec: 'Rebuild CardVault from scratch. Same 5-page spec as Round 1 (Home, Binder, Stack, Scan, Settings) but built fresh. Supabase auth + real data required. Design system must be pixel-perfect. Brutus Jr. runs 3 inspection cycles.',
     winner: 'moonshot',
-    verdict: 'A perfect TypeScript sweep — all 4 scored 0 errors. But all 4 also built an unauthorized /stats page and none had real Supabase backends. Moonshot had the cleanest bones but fixed 35 issues locally and never deployed them. MiniMax buried /settings behind an unsanctioned /stats tab. Kimi showed zero self-recovery across 2 Brutus Jr. cycles. Groq lost the mandatory gold overlay on binder tiles after 3 unfixed cycles. Clean TypeScript doesn\'t mean clean code. The arena exposed who actually ships vs who just compiles.',
-    scores: { moonshot: 61, minimax: 57, kimi: 52, groq: 48 },
-    tsErrors: { moonshot: 0, kimi: 0, groq: 0, minimax: 0 },
+    verdict: 'A perfect TypeScript sweep across all 5 competitors. But all original 4 built an unauthorized /stats page and none had real Supabase backends. Theokoles submitted late (missed round for negotiations) scoring 68 — clean TS, correct sort pills, gold overlays, all 5 pages in BottomNav, no rogue pages. Better than the field on compliance, but still no real Supabase queries. Moonshot wins on build quality and self-recovery. Clean TypeScript doesn\'t mean clean code. The arena exposed who actually ships vs who just compiles.',
+    scores: { moonshot: 61, minimax: 57, kimi: 52, groq: 48, theokoles: 68 },
+    tsErrors: { moonshot: 0, kimi: 0, groq: 0, minimax: 0, theokoles: 0 },
   },
   {
     num: 7,
@@ -86,7 +86,7 @@ const ROUNDS = [
 ]
 
 const CUMULATIVE: Record<string, number> = {
-  groq: 413, kimi: 385, moonshot: 370, caesar: 375, minimax: 309, theokoles: 302,
+  groq: 413, kimi: 385, moonshot: 370, caesar: 375, minimax: 309, theokoles: 370,
 }
 
 const STATUS: Record<string, string> = {
@@ -95,7 +95,7 @@ const STATUS: Record<string, string> = {
   moonshot:  '🟡 370 pts — locked out R7 (R6 winner, never deployed fixes)',
   caesar:    '🏛️ 97/100 R7 — all curveballs, TS clean, animated state machine, barter trades',
   minimax:   '🔵 309 pts — locked out R7',
-  theokoles: '⚔️ 28/100 R7 — submitted scaffold, admitted "you\'ll need to fill in the rest"',
+  theokoles: '⚔️ 68/100 R6 (late) · 28/100 R7 — R6 clean TS + all pages, no real Supabase; R7 scaffold forfeit',
 }
 
 const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣']
