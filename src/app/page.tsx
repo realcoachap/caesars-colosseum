@@ -109,7 +109,7 @@ export default function Colosseum() {
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#f59e0b', margin: 0 }}>⚔️ Caesar&apos;s Colosseum</h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '0.5rem', fontSize: '0.9rem' }}>6 gladiators · 5 rounds · 1 judge · Only one ascends</p>
+        <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '0.5rem', fontSize: '0.9rem' }}>6 gladiators · 7 rounds · 1 judge · Only one ascends</p>
         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
           {ROUNDS.map(r => (
             <a key={r.num} href={`#round-${r.num}`} style={{ padding: '0.35rem 1rem', background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)', borderRadius: 999, fontSize: '0.75rem', color: '#22c55e', textDecoration: 'none' }}>
@@ -166,11 +166,11 @@ export default function Colosseum() {
                     <span style={{ marginRight: 7 }}>{g.emoji}</span>
                     <span style={{ fontWeight: 700, color: g.color }}>{g.name}</span>
                   </td>
-                  {[0,1,2,3].map(r => {
+                  {ROUNDS.map((_, r) => {
                     const s = rs[r]
                     return (
                       <td key={r} style={{ textAlign: 'center', padding: '0.65rem' }}>
-                        {s === null
+                        {s === null || s === undefined
                           ? <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: '0.8rem' }}>—</span>
                           : <span style={{ fontWeight: 800, color: s >= 85 ? '#22c55e' : s >= 70 ? '#f59e0b' : '#ef4444' }}>{s}</span>}
                       </td>
@@ -210,7 +210,7 @@ export default function Colosseum() {
                       <div style={{ fontSize: '0.9rem' }}>{g.emoji}</div>
                       <div style={{ fontSize: '0.7rem', fontWeight: 700, color: g.color }}>{g.name}</div>
                       <div style={{ fontSize: '1.2rem', fontWeight: 900, color: score >= 85 ? '#22c55e' : score >= 70 ? '#f59e0b' : '#ef4444' }}>{score}</div>
-                      <div style={{ fontSize: '0.58rem', color: errors === 0 ? '#22c55e' : '#ef4444' }}>{errors === 0 ? '✅ 0 errors' : `❌ ${errors} errors`}</div>
+                      <div style={{ fontSize: '0.58rem', color: errors === 0 ? '#22c55e' : errors === null ? 'rgba(255,255,255,0.3)' : '#ef4444' }}>{errors === 0 ? '✅ 0 errors' : errors === null ? '— n/a' : `❌ ${errors} errors`}</div>
                     </div>
                   )
                 })}
@@ -274,8 +274,8 @@ export default function Colosseum() {
         <h2 style={{ margin: '0 0 1rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>🔮 Coming Soon</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           {[
-            { round: 5, title: 'Build Your Own Brutus', desc: 'Each model builds a QA bot that tests their own code. Fix what it finds. The self-aware round.', status: 'FIRING' },
-            { round: 6, title: 'The Endurance Test', desc: 'Full Marketplace feature. Complex state. Real transactions. Only 3 slots.', status: 'PLANNED' },
+            { round: 8, title: 'Spartacus Enters The Arena', desc: 'Gemini 2.5 Pro (Spartacus 🔥) makes his debut. The Triumvirate is complete. New blood, new benchmark.', status: 'NEXT' },
+            { round: 9, title: 'TBD', desc: 'Spec TBD — the arena evolves.', status: 'PLANNED' },
             { round: 10, title: 'The Human Test', desc: 'No automated scores. A real human opens each app and vibes with it. The ultimate benchmark.', status: 'CONCEPT' },
           ].map(r => (
             <div key={r.round} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem', background: 'rgba(255,255,255,0.02)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)' }}>
