@@ -65,19 +65,28 @@ const ROUNDS = [
     scores: { moonshot: 62, kimi: 68, groq: 55, minimax: 64, theokoles: 100, caesar: 92 },
     tsErrors: { moonshot: 0, kimi: 0, groq: 0, minimax: 0, theokoles: 0, caesar: 0 },
   },
+  {
+    num: 6,
+    title: 'Round 6 — The Fresh Start',
+    spec: 'Rebuild CardVault from scratch. Same 5-page spec as Round 1 (Home, Binder, Stack, Scan, Settings) but built fresh. Supabase auth + real data required. Design system must be pixel-perfect. Brutus Jr. runs 3 inspection cycles.',
+    winner: 'moonshot',
+    verdict: 'A perfect TypeScript sweep — all 4 scored 0 errors. But all 4 also built an unauthorized /stats page and none had real Supabase backends. Moonshot had the cleanest bones but fixed 35 issues locally and never deployed them. MiniMax buried /settings behind an unsanctioned /stats tab. Kimi showed zero self-recovery across 2 Brutus Jr. cycles. Groq lost the mandatory gold overlay on binder tiles after 3 unfixed cycles. Clean TypeScript doesn\'t mean clean code. The arena exposed who actually ships vs who just compiles.',
+    scores: { moonshot: 61, minimax: 57, kimi: 52, groq: 48 },
+    tsErrors: { moonshot: 0, kimi: 0, groq: 0, minimax: 0 },
+  },
 ]
 
 const CUMULATIVE: Record<string, number> = {
-  caesar: 278, theokoles: 274, groq: 321, kimi: 333, moonshot: 309, minimax: 252,
+  caesar: 278, theokoles: 274, groq: 369, kimi: 385, moonshot: 370, minimax: 309,
 }
 
 const STATUS: Record<string, string> = {
-  caesar:    '🏛️ 92/100 — 8 design warnings exposed by Theokoles',
-  theokoles: '⚔️ PERFECT 100 — cross-audited all 6, flawless code',
-  kimi:      '🟣 68/100 — BottomNav missing on all 6 pages',
-  groq:      '🟠 55/100 — 32 issues, worst in the arena',
-  moonshot:  '🟡 62/100 — 22 issues found by cross-audit',
-  minimax:   '🔵 64/100 — only gladiator with BottomNav on all pages',
+  caesar:    '🏛️ 278 pts — R6 absent (building Caesar\'s Palace)',
+  theokoles: '⚔️ 274 pts — R6 absent (gladiator negotiations)',
+  kimi:      '🟣 52/100 R6 — zero self-recovery, 0 Supabase, extra /stats page',
+  groq:      '🟠 48/100 R6 — 3 unfixed Brutus Jr. cycles, missing gold overlay',
+  moonshot:  '🟡 61/100 R6 — best bones, fixed 35 issues locally, never deployed',
+  minimax:   '🔵 57/100 R6 — /settings buried behind unsanctioned /stats tab',
 }
 
 const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣']
