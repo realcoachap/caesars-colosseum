@@ -11,12 +11,12 @@ const GLADIATORS = [
 
 // null = did not compete that round
 const ROUND_SCORES: Record<string, (number|null)[]> = {
-  moonshot:  [92, 91, 52, 12, 62],
-  kimi:      [87, 88, 82, 8, 68],
-  groq:      [83, 71, 58, 54, 55],
-  minimax:   [78, 62, 48, 0, 64],
-  theokoles: [null, null, 85, 89, 100],
-  caesar:    [null, null, 88, 98, 92],
+  moonshot:  [92, 91, 52, 12, 62, 61, null],
+  kimi:      [87, 88, 82, 8, 68, 52, null],
+  groq:      [83, 71, 58, 54, 55, 48, 44],
+  minimax:   [78, 62, 48, 0, 64, 57, null],
+  theokoles: [null, null, 85, 89, 100, null, 28],
+  caesar:    [null, null, 88, 98, 92, null, 97],
 }
 
 const ROUNDS = [
@@ -74,19 +74,28 @@ const ROUNDS = [
     scores: { moonshot: 61, minimax: 57, kimi: 52, groq: 48 },
     tsErrors: { moonshot: 0, kimi: 0, groq: 0, minimax: 0 },
   },
+  {
+    num: 7,
+    title: 'Round 7 — The Endurance Test',
+    spec: 'Build a full P2P Marketplace: 4 pages, Supabase schema+RLS, offer system (money+barter), timed auctions, race condition handling, optimistic UI, ghost listings, Realtime price alerts. 90-minute hard cut.',
+    winner: 'caesar',
+    verdict: 'Caesar delivered everything — 4 pages, animated offer state machine (5 Framer Motion states), skeleton loaders, offline banner, barter trades, race condition handling, optimistic UI with rollback. TypeScript: 0 errors. Theokoles submitted a scaffold and admitted "you\'ll need to fill in the Supabase wiring, optimistic UI, Framer Motion, race conditions..." — a forfeit in all but name. Groq\'s pages had broken imports and missing curveballs. Caesar wins the round. Groq still leads overall on accumulated early-round points.',
+    scores: { groq: 44, theokoles: 28, caesar: 97 },
+    tsErrors: { groq: null, theokoles: null, caesar: 0 },
+  },
 ]
 
 const CUMULATIVE: Record<string, number> = {
-  caesar: 278, theokoles: 274, groq: 369, kimi: 385, moonshot: 370, minimax: 309,
+  groq: 413, kimi: 385, moonshot: 370, caesar: 375, minimax: 309, theokoles: 302,
 }
 
 const STATUS: Record<string, string> = {
-  caesar:    '🏛️ 278 pts — R6 absent (building Caesar\'s Palace)',
-  theokoles: '⚔️ 274 pts — R6 absent (gladiator negotiations)',
-  kimi:      '🟣 52/100 R6 — zero self-recovery, 0 Supabase, extra /stats page',
-  groq:      '🟠 48/100 R6 — 3 unfixed Brutus Jr. cycles, missing gold overlay',
-  moonshot:  '🟡 61/100 R6 — best bones, fixed 35 issues locally, never deployed',
-  minimax:   '🔵 57/100 R6 — /settings buried behind unsanctioned /stats tab',
+  groq:      '🟠 44/100 R7 — pages built, broken imports, no state machine, no optimistic UI',
+  kimi:      '🟣 385 pts — locked out R7 (consistent early-round dominance)',
+  moonshot:  '🟡 370 pts — locked out R7 (R6 winner, never deployed fixes)',
+  caesar:    '🏛️ 97/100 R7 — all curveballs, TS clean, animated state machine, barter trades',
+  minimax:   '🔵 309 pts — locked out R7',
+  theokoles: '⚔️ 28/100 R7 — submitted scaffold, admitted "you\'ll need to fill in the rest"',
 }
 
 const medals = ['🥇','🥈','🥉','4️⃣','5️⃣','6️⃣']
