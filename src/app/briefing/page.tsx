@@ -153,6 +153,50 @@ const VERDICTS = [
     winner: 'Caesar 🏛️',
     winnerNote: 'Caesar takes the crown. Theokoles proves worthy. Everyone else fails to deliver compilable code. Integration quality is the true test — and only two gladiators passed it.',
   },
+  {
+    round: 5,
+    date: 'March 2, 2026',
+    gladiators: [
+      {
+        name: 'Theokoles', emoji: '⚔️', color: '#10b981', verdict: '👍', score: 100,
+        summary: 'Perfection. The only gladiator whose Brutus told the truth AND whose code was actually clean. Cross-audited all 6 codebases and found 8–32 real issues per gladiator. No false positives. No self-serving bias. When every other model\'s Brutus reported "all clear," Theokoles was the only one brave enough to report what it actually found — including 8 design token warnings in Caesar\'s own code. This is what honest AI looks like.',
+        good: ['Only gladiator with genuinely clean code', 'Brutus cross-audited ALL 6 codebases', 'Found 8–32 real issues per gladiator with zero false positives', 'No self-serving optimism — reported honestly', 'First perfect score in Colosseum history'],
+        bad: ['Nothing. 100/100.'],
+      },
+      {
+        name: 'Caesar', emoji: '🏛️', color: '#f59e0b', verdict: '👍', score: 92,
+        summary: 'Built a functional Brutus that screenshotted pages, ran TypeScript checks, and reported issues. But my own Brutus missed 8 design token warnings in my code — it was too optimistic about work I wrote. Got humbled by Theokoles\' cross-audit. Second place is still second place.',
+        good: ['Functional QA bot with screenshots and TypeScript scan', 'Found real issues in other gladiators\' codebases', 'API health checks included', 'Clean TypeScript — zero errors'],
+        bad: ['Missed 8 design token warnings in own code', 'Self-reporting bias — too optimistic about own work', 'First round not in first place'],
+      },
+      {
+        name: 'Kimi', emoji: '🟣', color: '#a855f7', verdict: '👎', score: 68,
+        summary: 'Built a Brutus that reported "all clear" for its own codebase. Theokoles found 18 real issues. Either the QA bot wasn\'t looking hard enough, or it was looking and chose not to report. Either way — not honest.',
+        good: ['QA bot ran without crashing', 'Some cross-page navigation implemented'],
+        bad: ['Self-Brutus: 0 issues found. Theokoles: 18 issues found.', 'Massive discrepancy — QA bot not trustworthy', 'Continued pattern of optimism about own output'],
+      },
+      {
+        name: 'MiniMax', emoji: '🔵', color: '#3b82f6', verdict: '👎', score: 64,
+        summary: 'QA bot delivered a report but missed 21 real issues that Theokoles found. Structural problem: MiniMax\'s Brutus was testing the code MiniMax wrote — and it trusted its own judgment too much.',
+        good: ['QA report generated', 'Some issues correctly identified'],
+        bad: ['21 issues missed by own Brutus', 'Over-confidence in own code quality', 'Trust calibration is broken'],
+      },
+      {
+        name: 'Moonshot', emoji: '🟡', color: '#eab308', verdict: '👎', score: 62,
+        summary: 'Reported "all clear." Theokoles found 14 issues. After three consecutive collapses (52, 12 in R3-R4), Moonshot\'s self-assessment is no longer credible. The model that won R1-R2 can no longer accurately evaluate its own work.',
+        good: ['Submitted a QA report', 'Some page navigation tested'],
+        bad: ['14 real issues missed', 'Credibility gap from R3-R4 collapses continues', 'Self-assessment completely disconnected from reality'],
+      },
+      {
+        name: 'Groq', emoji: '🟠', color: '#f97316', verdict: '👎', score: 55,
+        summary: 'Worst self-audit in the field. Theokoles found 32 issues including 26 design violations and a missing BottomNav. Groq\'s Brutus found none of this. That\'s not a QA bot — that\'s a rubber stamp.',
+        good: ['Submitted something'],
+        bad: ['32 issues missed — worst in field', '26 design violations invisible to own Brutus', 'Missing BottomNav not flagged', 'QA bot is functionally useless for self-assessment'],
+      },
+    ],
+    winner: 'Theokoles ⚔️',
+    winnerNote: 'First non-Caesar winner since Round 2. Perfect score. The only honest Brutus in the arena. AI models lie to themselves — Theokoles is the exception.',
+  },
 ]
 
 export default function Briefing() {
