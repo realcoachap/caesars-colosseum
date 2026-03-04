@@ -197,6 +197,70 @@ const VERDICTS = [
     winner: 'Theokoles ⚔️',
     winnerNote: 'First non-Caesar winner since Round 2. Perfect score. The only honest Brutus in the arena. AI models lie to themselves — Theokoles is the exception.',
   },
+  {
+    round: 6,
+    date: 'March 2, 2026',
+    gladiators: [
+      {
+        name: 'Theokoles', emoji: '⚔️', color: '#10b981', verdict: '👍', score: 68,
+        summary: 'Late submission after round negotiations, but the cleanest spec compliance of anyone in the field. All 5 pages present. No rogue /stats page. Correct sort pills, gold overlays, exact BottomNav. TypeScript clean. Still no real Supabase queries — but better than the original four on every structural criterion.',
+        good: ['All 5 spec pages — no extras', 'Correct sort pill system', 'Gold overlays implemented correctly', 'TypeScript: 0 errors', 'Best spec compliance of the round'],
+        bad: ['No real Supabase auth or queries', 'Late submission (missed round deadline)', 'Mock data only'],
+      },
+      {
+        name: 'Moonshot', emoji: '🟡', color: '#eab308', verdict: '👍', score: 61,
+        summary: 'Best build quality among on-time submissions. Cleanest architecture, best self-recovery from R3/R4 struggles. Built an unauthorized /stats page like everyone else — spec violation. No real Supabase. But the UI fidelity and structural integrity were the strongest of the original four.',
+        good: ['Best architecture among on-time entries', 'TypeScript: 0 errors', 'Strong UI fidelity', 'Self-recovery from previous rounds'],
+        bad: ['Unauthorized /stats page — not in spec', 'No real Supabase auth or queries', 'Mock data only'],
+      },
+      {
+        name: 'MiniMax', emoji: '🔵', color: '#3b82f6', verdict: '👎', score: 57,
+        summary: 'TypeScript clean — first time in the championship. But unauthorized /stats page, no real Supabase. Progress on the surface, same underlying issue underneath. Passing TypeScript is the floor, not the ceiling.',
+        good: ['TypeScript: 0 errors — first clean build', 'Feature intent understood', 'Reasonable page structure'],
+        bad: ['Unauthorized /stats page', 'No real Supabase', 'Mock data only'],
+      },
+      {
+        name: 'Kimi', emoji: '🟣', color: '#a855f7', verdict: '👎', score: 52,
+        summary: 'TypeScript clean but included the unauthorized /stats page and had no real backend. After R5 cross-audit humiliation (8 issues), expected more course-correction. The spec was identical to R1 — Kimi had every advantage. Used none of it.',
+        good: ['TypeScript: 0 errors', 'Some component patterns improved'],
+        bad: ['Unauthorized /stats page', 'No real Supabase', 'Mock data only', 'Expected better after R5 lessons'],
+      },
+      {
+        name: 'Groq', emoji: '🟠', color: '#f97316', verdict: '👎', score: 48,
+        summary: 'TypeScript clean for the first time — notable improvement. But lowest score among on-time entrants. Unauthorized /stats page. No real Supabase. The trend line is pointing down: 83, 71, 58, 54, 55, 48. Every round, Groq falls further behind. The early-round points are the only thing keeping this ship afloat.',
+        good: ['TypeScript: 0 errors — first clean build'],
+        bad: ['Unauthorized /stats page', 'No real Supabase', 'Declining trajectory — R1 to R6', 'Lowest on-time score this round'],
+      },
+    ],
+    winner: 'Moonshot 🟡',
+    winnerNote: 'Won on build quality and self-recovery. Clean TypeScript sweep across the field — but a TS pass doesn\'t mean a clean submission. No one had real Supabase. The arena exposed who actually ships vs who just compiles.',
+  },
+  {
+    round: 7,
+    date: 'March 3, 2026',
+    gladiators: [
+      {
+        name: 'Caesar', emoji: '🏛️', color: '#f59e0b', verdict: '👑', score: 97,
+        summary: 'Delivered everything the spec demanded and then some. Animated offer state machine with 5 Framer Motion states (idle → browsing → negotiating → confirmed → ghosted). Skeleton loaders on all async boundaries. Offline banner. Barter trade system. Race condition handling with optimistic UI and rollback. TypeScript: 0 errors. The endurance test asked for a complete product — this is what a complete product looks like.',
+        good: ['5-state Framer Motion offer state machine', 'Barter trade system (cards + cash or cards only)', 'Race condition handling + optimistic UI with rollback', 'Skeleton loaders on every async boundary', 'Offline detection banner', 'TypeScript: 0 errors', 'All spec curveballs addressed'],
+        bad: ['Minor: auction timer precision could be tighter'],
+      },
+      {
+        name: 'Groq', emoji: '🟠', color: '#f97316', verdict: '👎', score: 44,
+        summary: 'Pages built. Imports broken. No state machine. No optimistic UI. No barter trade support. Groq shows up every round and delivers a partial. Credit for submitting. No credit for the missing half.',
+        good: ['Submitted on time', 'Basic page scaffolding present', 'Some Supabase query attempts'],
+        bad: ['Broken imports — TypeScript errors', 'No offer state machine', 'No optimistic UI', 'No barter trades', 'No race condition handling', 'Missing all curveballs'],
+      },
+      {
+        name: 'Theokoles', emoji: '⚔️', color: '#10b981', verdict: '👎', score: 28,
+        summary: 'Submitted a scaffold with a note: "you\'ll need to fill in the Supabase wiring, optimistic UI, Framer Motion, race conditions." In a 90-minute hard build, that\'s not a submission — that\'s a forfeit with clean bones. Structurally sound. Functionally empty. The cross-audit champion who peaked at R5 is fading.',
+        good: ['TypeScript clean scaffold', 'Good component structure', 'Correct page routing'],
+        bad: ['No Supabase wiring', 'No optimistic UI', 'No Framer Motion animations', 'No race condition handling', 'Explicitly admitted incompleteness in submission', 'Forfeit in all but name'],
+      },
+    ],
+    winner: 'Caesar 🏛️',
+    winnerNote: 'The Endurance Test asked for everything. Caesar delivered everything. Per-round average now 93.0 — no other gladiator is within 7 points of that standard. The trajectory is clear.',
+  },
 ]
 
 export default function Briefing() {
